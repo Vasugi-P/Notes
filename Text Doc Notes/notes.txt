@@ -1,0 +1,24 @@
+assert true ---> what value is returning is true
+
+hackathon on april 1,2,3
+
+6-7 on participant 
+
+individual performance
+
+ing australia asking lot of question
+
+----> java doc comments for one class
+----->description about the class,methods
+
+sonarQube
+start sonar server
+
+rest api standards
+save post method  + request body
+get all methods get maping
+get method find by id path variable
+update employee 
+delete mapping ,soft delete
+
+couses/{couserId}/topics

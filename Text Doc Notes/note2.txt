@@ -1,0 +1,47 @@
+dispatcher servlet------>front controller
+
+model and view------>processing result
+
+view resolver----->add prefix and suffix
+
+ORM----object relational mapping ---->manage objects
+
+@Transactional---->write code automatically behind the scene
+		(spring write the code)
+	**not apply @Transactional----->spring doesn't create session 
+			          ------>hibernate session also not create
+
+   Transaction----->logical grp of sql statements
+		>GROUP or ROLLBACK
+	~ way to handle ACID properties
+		Atomicity--->transaction completely happen or rollback
+		consistency--->During transaction-data is inconsistent state by using log we can control
+				****before and after i will be in correct state	
+		Isolation--->intermediate state of transaction is not visible for external 
+		Durability--->after commit we cant rollback
+		
+	-->propagation
+	-->Isolation
+	-->Rollback rules
+	-->Timeout
+	-->Readonly	
+
+Default value of Read-Only is  false
+
+Rollback----->unckecked exception throw from service side it rollback
+
+
+By default if ||| business method |||is throwing checked exception is not roll back,but we can change behaviour
+
+
+
+Logging in aop way:
+
+  1.create a custom annotation with scope as runtime.
+ 2.create aop code that use around advice to process that annnotation
+3. mention in ur xml file that u want to integration of aspect J + spring
+cccc:is deal using Aop;
+	@Transactional
+	logging
+	security
+	 

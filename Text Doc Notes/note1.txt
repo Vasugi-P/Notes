@@ -1,0 +1,116 @@
+
+Annotation -----: kind of meta data
+
+          ANNOTATION
+	i)predefine
+	ii)custom
+
+@Target---->where i can apply anno
+@Retention----> where anno can be effected 
+
+
+what is class,class in java?
+	the class which give info about class at run time
+	it contain meta data about class.
+
+
+source,class,runtime(available to jvm)
+
+Class class1=emp1.getClass();------> not work at run time
+Class class2=Emp.Class.getClass();---->not work at run time
+Class class3=Class.forName("com.demo.Emp"); ---> only work at run time
+
+
+
+
+java reflection
+=============
+API-->know meta data info at run time
+
+why @ run time?
+.it can read the classes at run time.
+
+
+Bytecode manipulation
+===================
+changing meta data at runtime
+
+Aspect J--->internally read the anno using the concept of java reflection.
+
+Anno processing can be done with java API
+
+how tomcat is using java reflection to know which servlet need to run?
+------------------------------------------------------------------------------------------
+ > user req for /Demo
+> tomcat after reading web.xml and servlet mapping come to know (run time)
+	that i need to load a class "com.demo.Demo"
+.classNotFoundException
+Class.forName("package") by using this method
+> tomcat try to create a single obj of servlet class using reflection & try to call default constructor.
+	> servlet must have default ctr.
+	> if tomcat dont find default ctr is not able to decide thich ctr is should call and get confused
+	
+
+
+
+ @Autowired annotation
+
+
+In Spring, you can use @Autowired annotation to auto wire bean on the setter method,
+ constructor or a field.
+ Moreover, it can autowired property in a particular bean. 
+The @Autowired annotation is auto wire the bean by matching data type.
+
+
+@Controller
+
+A controller contains the business logic of an application. 
+Here, the @Controller annotation is used to mark the class as the controller.
+
+Front Controller 
+
+ In Spring Web MVC, the DispatcherServlet class works as the front controller. 
+It is responsible to manage the flow of the Spring MVC application.
+
+@RequestMapping annotation
+
+@RequestMapping annotation is used for mapping web requests to particular handler classes or handler methods.
+ The classes or methods that are annotated with 
+@RequestMapping will be scanned and registered as the URI mappings for that specific class or method. \
+Any future web requests will be redirected to that class or method.
+
+servlet mapping
+
+Servlet mapping specifies the web container of which java servlet should be invoked for a url given by client. 
+It maps url patterns to servlets. 
+When there is a request from a client, servlet container decides to which application it should forward to. 
+Then context path of url is matched for mapping servlets.
+
+Servlets should be registered with servlet container.
+ For that, you should add entries in web deployment descriptor web.xml. 
+It is located in WEB-INF directory of the web application.
+
+servlet-mapping has two child tags, url-pattern and servlet-name. 
+url-pattern specifies the type of urls for which, the servlet given in servlet-name should be called. 
+Be aware that, the container will use case-sensitive for string comparisons for servlet matching.
+
+
+A string beginning with a ‘/’ character and ending with a ‘/*’ suffix is used for path mapping.
+A string beginning with a ‘*.’ prefix is used as an extension mapping.
+A string containing only the ‘/’ character indicates the “default” servlet of the application. In this case the servlet path is the request URI minus the context path and the path info is null.
+All other strings are used for exact matches only.
+
+
+A string beginning with a ‘/’ character and ending with a ‘/*’ suffix is used for path mapping.
+
+A string beginning with a ‘*.’ prefix is used as an extension mapping.
+
+
+ @PostConstruct annotation, 
+	it gets executed after the spring bean is initialized. by init(spring will not called the method for the user details)
+DAO
+
+	Dao clases are used to reuse the jdbc logic & Dao(Data Access Object) is a design pattern.
+ dao is a simple java class which contains JDBC logic . 
+The Java Data Access Object (Java DAO) is an important component in business applications
+low-level operations to access the database is done

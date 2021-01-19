@@ -1,0 +1,21 @@
+@Temporal
+	converting the date and time values from Java object to 
+	compatible database type and retrieving back to the application.
+
+CrudRepository 
+	interface provides generic CRUD operations on a repository for a specific type.
+ 	Its findById() method retrieves an entity by its id. The return value is Optional<T>.
+
+Optional<T> 
+	is a container object which may or may not contain a non-null value.
+ 	If a value is present, isPresent() returns true and get() returns the value.
+ 	The ifPresent() invokes the specified method if the value is present; otherwise nothing is done.
+
+	Copying properties of one object to another object is often tedious and error-prone for developers. 
+BeanUtils 
+	class provides a copyProperties method that copies the properties of source object to target object
+ where the property name is same in both objects
+
+
+
+
